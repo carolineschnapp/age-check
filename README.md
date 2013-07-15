@@ -3,7 +3,7 @@ age-check
 
 Module to add to a Shopify website where content is restricted to adults
 
-# Instructions #
+## Instructions ##
 
 1. In your Shopify theme, create an age-check.liquid snippet, and add the code in the file age-check.liquid to it.
 3. Include your snippet in theme.liquid after <tt>`<body>`</tt> tag using <tt>{% include 'age-check.liquid' %}</tt>. In other words, include the snippet at the very beginning of the body content.
@@ -12,7 +12,7 @@ Module to add to a Shopify website where content is restricted to adults
 6. Optional: enable the 'enter date of birth' feature at top of snippet. Set variable to true.
 7. Pro tip: to delete or edit the 'isAnAdult' cookie to test your functionality, use this extension in Google Chrome: https://chrome.google.com/webstore/detail/edit-this-cookie/fngmhnnpilhplaeedifhccceomclgfbg
 
-# How to handle users that have javascript disabled? #
+## How to handle users that have javascript disabled? ##
 
 If you want to keep out users that have javascript disabled, add the following to the head section of theme.liquid:
 
