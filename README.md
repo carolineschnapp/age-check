@@ -6,7 +6,7 @@ Module to add to a Shopify website where content is restricted to adults
 ## Instructions ##
 
 1. In your Shopify theme, create an age-check.liquid snippet, and add the code in the file age-check.liquid to it.
-3. Include your snippet in theme.liquid after <tt>`<body>`</tt> tag using <tt>{% include 'age-check.liquid' %}</tt>. In other words, include the snippet at the very beginning of the body content.
+3. Include your snippet in theme.liquid after <tt>`<body>`</tt> tag using <tt>{% include 'age-check' %}</tt>. In other words, include the snippet at the very beginning of the body content.
 4. Add an age-check-backgound.jpg image to your theme assets. Make that a large image, ~ 1024 by 1024 pixels. That image will fill the page behind the dialog box that asks if one is old enough.
 5. Optional: change age minimum at top of snippet. Set the variable for this.
 6. Optional: enable the 'enter date of birth' feature at top of snippet. Set variable to true.
