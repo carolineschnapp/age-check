@@ -190,14 +190,12 @@ This website contains adult material and is only suitable for those 18 years or 
 
 <script>
  function ageCheck() { 
-   var min_age = {{ age }};  //Set the minimum age. 
+   var min_age = {{ age }};  // Set the minimum age. 
    var year =   parseInt(document.getElementById('byear').value);
    var month =  parseInt(document.getElementById('bmonth').value);
    var day =    parseInt(document.getElementById('bday').value);
    var theirDate = new Date((year + min_age), month, day);
-   //console.log(theirDate);
    var today = new Date;  
-   //console.log(today);
    if ((today.getTime() - theirDate.getTime()) < 0) {
      window.location = 'http://google.com'; //enter domain url where you would like the underaged visitor to be sent to.
    } else {
@@ -211,14 +209,14 @@ This website contains adult material and is only suitable for those 18 years or 
   };
 
   function readCookie(name) {
-	  var nameEQ = name + "=";
-  	var ca = document.cookie.split(';');
-  	for(var i=0;i < ca.length;i++) {
-  	  var c = ca[i];
-  	  while (c.charAt(0)==' ') c = c.substring(1,c.length);
-  	  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  	}
-  	return null;
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
   };
 
   var isAnAdult = readCookie('isAnAdult');
@@ -264,4 +262,3 @@ This website contains adult material and is only suitable for those 18 years or 
 .modal-prompt select { float: left; margin-right: 10px; }
 
 </style>
-
