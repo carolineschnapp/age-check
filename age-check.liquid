@@ -191,9 +191,9 @@ This website contains adult material and is only suitable for those 18 years or 
 <script>
  function ageCheck() { 
    var min_age = {{ age }};  // Set the minimum age. 
-   var year =   parseInt(document.getElementById('byear').value);
-   var month =  parseInt(document.getElementById('bmonth').value);
-   var day =    parseInt(document.getElementById('bday').value);
+   var year =   parseInt(document.getElementById('byear').value) || 2014;
+   var month =  parseInt(document.getElementById('bmonth').value) || 1;
+   var day =    parseInt(document.getElementById('bday').value) || 1;
    var theirDate = new Date((year + min_age), month, day);
    var today = new Date;  
    if ((today.getTime() - theirDate.getTime()) < 0) {
