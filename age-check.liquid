@@ -1,4 +1,4 @@
-{% assign enter_date_of_birth = false %}
+{% assign enter_date_of_birth = true %}
 
 {% assign age = 18 %}
 
@@ -21,7 +21,7 @@ This website contains adult material and is only suitable for those 18 years or 
     <div{% unless enter_date_of_birth %} style="display:none;"{% endunless %}>
       <select name="bmonth" id="bmonth"{% unless enter_date_of_birth %} value="1"{% endunless %}>
         {% if enter_date_of_birth %}
-        <option>- Month -</option>
+        <option value="1">- Month -</option>
         <option value="1">January</option>
         <option value="2">February</option>
         <option value="3">March</option>
@@ -38,7 +38,7 @@ This website contains adult material and is only suitable for those 18 years or 
       </select> 
       <select name="bday" id="bday"{% unless enter_date_of_birth %} value="1"{% endunless %}>
         {% if enter_date_of_birth %}
-        <option>- Day -</option>
+        <option value="1">- Day -</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -74,8 +74,8 @@ This website contains adult material and is only suitable for those 18 years or 
       </select>
       <select name="byear" id="byear"{% unless enter_date_of_birth %} value="1950"{% endunless %}>
         {% if enter_date_of_birth %}
-        <option>- Year -</option>
-        <option value="2011">2012</option>
+        <option value="2015">- Year -</option>
+        <option value="2012">2012</option>
         <option value="2011">2011</option>
         <option value="2010">2010</option>
         <option value="2009">2009</option>
@@ -189,14 +189,16 @@ This website contains adult material and is only suitable for those 18 years or 
 </div>
 
 <script>
- function ageCheck() { 
+ function ageCheck() {
    var min_age = {{ age }};  // Set the minimum age. 
-   var year =   parseInt(document.getElementById('byear').value) || 2014;
-   var month =  parseInt(document.getElementById('bmonth').value) || 1;
-   var day =    parseInt(document.getElementById('bday').value) || 1;
+   var year =   parseInt(document.getElementById('byear').value);
+   var month =  parseInt(document.getElementById('bmonth').value);
+   var day =    parseInt(document.getElementById('bday').value);
    var theirDate = new Date((year + min_age), month, day);
-   var today = new Date;  
+   var today = new Date;
+   var underAged = false;
    if ((today.getTime() - theirDate.getTime()) < 0) {
+     underAged = true;
      window.location = 'http://google.com'; //enter domain url where you would like the underaged visitor to be sent to.
    } else {
      var days = 14; //number of days until they must go through the age checker again.
