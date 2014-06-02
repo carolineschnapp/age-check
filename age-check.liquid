@@ -1,4 +1,4 @@
-{% assign enter_date_of_birth = true %}
+{% assign enter_date_of_birth = false %}
 
 {% assign age = 18 %}
 
@@ -196,9 +196,7 @@ This website contains adult material and is only suitable for those 18 years or 
    var day =    parseInt(document.getElementById('bday').value);
    var theirDate = new Date((year + min_age), month, day);
    var today = new Date;
-   var underAged = false;
    if ((today.getTime() - theirDate.getTime()) < 0) {
-     underAged = true;
      window.location = 'http://google.com'; //enter domain url where you would like the underaged visitor to be sent to.
    } else {
      var days = 14; //number of days until they must go through the age checker again.
