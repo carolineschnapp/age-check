@@ -3,11 +3,11 @@
 {% assign age = 18 %}
 
 {% capture adult_header %}
-Adults only (18+)
+Adults only ({{ age }}+)
 {% endcapture %}
 
 {% capture adult_text %}
-This website contains adult material and is only suitable for those 18 years or older. Click Enter only if you are at least 18 years of age.
+This website contains adult material and is only suitable for those {{ age }} years or older. Click Enter only if you are at least {{ age }} years of age.
 {% endcapture %}
 
 <div id="prompt-background">
